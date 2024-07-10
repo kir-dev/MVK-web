@@ -9,18 +9,10 @@ export default defineType({
       type: "image",
       title: "Image",
     }),
-    defineArrayMember({
-      type: "code",
-      title: "Code block",
-    }),
-    defineArrayMember({
-      type: "actionButton",
-      title: "Action button",
-    }),
-    defineArrayMember({
-      type: "youtubeEmbed",
-      title: "YouTube Embed",
-    }),
+    // defineArrayMember({
+    //   type: "youtubeEmbed",
+    //   title: "YouTube Embed",
+    // }),
     defineArrayMember({
       title: "Block",
       type: "block",
