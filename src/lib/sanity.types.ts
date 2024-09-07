@@ -10,7 +10,10 @@ export interface Team {
   name: string;
   slug: Slug;
   thumbnail: ImageAsset;
-  description: string;
+  description: PortableTextBlock[];
+  logo: ImageAsset;
+  Links: LinkType[];
+  races: RaceResult[];
 }
 export interface News {
   _type: "news";
@@ -20,4 +23,24 @@ export interface News {
   thumbnail: ImageAsset;
   content: PortableTextBlock[];
   excerpt: string;
+}
+export interface LinkType {
+  _key: string;
+  title: string;
+  url: string;
+}
+export interface Race {
+  _type: "race";
+  _id: string;
+  title: string;
+  url: string;
+}
+export interface RaceResult {
+  _type: "raceResult";
+  _id: string;
+  title: string;
+  logo: ImageAsset;
+  description: string;
+  date: string;
+  image: ImageAsset;
 }

@@ -7,7 +7,6 @@ import { MoveRight } from "lucide-react";
 export default async function NewsSection() {
   const client = getClient();
   const news = await getFirstFewNews(client, 5);
-  console.log(news);
   if (!news) return <div className="bg-fuchsia-300">Nem adta be</div>;
   return (
     <div className="w-screen h-fit  px-10 py-4 relative">

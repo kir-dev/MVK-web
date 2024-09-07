@@ -23,6 +23,13 @@ export const teamType = defineType({
       description: "Ez lesz a csapat oldal URL-je.",
     },
     {
+      name: "logo",
+      title: "Logo",
+      type: "image",
+      description:
+        "Ez fog megjelenni a csapat oldalon, a megfelelő megjelenítés érdekében a 1:1-es képarány ajánlott.",
+    },
+    {
       name: "thumbnail",
       title: "Thumbnail",
       type: "image",
@@ -33,8 +40,38 @@ export const teamType = defineType({
     {
       name: "description",
       title: "Leírás",
-      type: "text",
+      type: "blockContent",
       description: "Ez a leírás fog megjelenni a csapat oldalon.",
+    },
+    {
+      title: "Versenyek",
+      name: "races",
+      type: "array",
+      of: [{ type: "raceResult" }],
+    },
+    {
+      name: "Links",
+      title: "Linkek",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Cím",
+              type: "string",
+              validation: (rule) => rule.required(),
+            },
+            {
+              name: "url",
+              title: "URL",
+              type: "url",
+              validation: (rule) => rule.required(),
+            },
+          ],
+        },
+      ],
     },
   ],
 });

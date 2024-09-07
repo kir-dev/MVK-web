@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@sanity/client": "^6.20.1",
     "@sanity/image-url": "1",
@@ -17,13 +18,14 @@
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.1.6",
     "embla-carousel-react": "^8.1.6",
-    "lucide-react": "^0.407.0",
+    "lucide-react": "^0.439.0",
     "next": "14.2.4",
     "next-sanity": "9.4.2",
     "react": "^18",
     "react-dom": "^18",
     "sanity": "3",
     "shadcn-ui": "^0.8.0",
+    "simple-icons": "^13.8.0",
     "styled-components": "6",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"

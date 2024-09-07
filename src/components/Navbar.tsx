@@ -1,7 +1,77 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { getTeams } from "@/lib/queries/team.queries";
+import { getClient } from "@/lib/sanity.client";
+import { useEffect, useState } from "react";
+import { Team } from "@/lib/sanity.types";
+
+const components: { title: string; href: string; description: string }[] = [
+  {
+    title: "Alert Dialog",
+    href: "/docs/primitives/alert-dialog",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
+    description:
+      "For sighted users to preview content available behind a link.",
+  },
+  {
+    title: "Progress",
+    href: "/docs/primitives/progress",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  },
+  {
+    title: "Scroll-area",
+    href: "/docs/primitives/scroll-area",
+    description: "Visually or semantically separates content.",
+  },
+  {
+    title: "Tabs",
+    href: "/docs/primitives/tabs",
+    description:
+      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  },
+  {
+    title: "Tooltip",
+    href: "/docs/primitives/tooltip",
+    description:
+      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  },
+];
 
 export default function Navbar() {
+  const [teams, setTeams] = useState<Team[]>([]);
+  useEffect(() => {
+    const client = getClient();
+    async function fetchTeams() {
+      try {
+        const data = await getTeams(client);
+        console.log(data);
+        if (data) {
+          setTeams(data);
+        }
+      } catch (error) {
+        console.error("Error fetching teams:", error);
+      }
+    }
+
+    fetchTeams();
+  }, []);
   return (
     <header className="sticky top-0 z-50 border bg-white px-6 py-3 text-black w-screen">
       <div className="flex flex-row items-center justify-between border-t-black">
@@ -11,14 +81,43 @@ export default function Navbar() {
             className="flex w-fit align-middle flex-row items-center gap-3"
           >
             <Image src="/mvk-logo.svg" alt="MVK logo" width={100} height={24} />
-            <h1 className="">Műegyetemi Versenycsapat Közösség</h1>
+            <h1 className="font-semibold">Műegyetemi Versenycsapat Közösség</h1>
           </Link>
         </div>
-        <nav className="flex items-center justify-end text-right gap-8">
-          <Link href="/teams">Csapatok</Link>
-          <Link href="/news">Hírek</Link>
-          <Link href="/races">Versenyek</Link>
-        </nav>
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Csapatok</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="flex flex-col gap-3 p-4">
+                  {teams.map((team) => (
+                    <Link
+                      href={`/teams/${team.slug.current}`}
+                      key={team._id}
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {team.name}
+                    </Link>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/news" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Hírek
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/races" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Versenyek
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
     </header>
   );
