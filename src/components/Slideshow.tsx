@@ -42,9 +42,9 @@ export default function Slideshow() {
 
       <Carousel
         className="w-screen z-10"
-        plugins={[plugin.current]}
-        onMouseEnter={plugin.current.stop}
-        onMouseLeave={plugin.current.reset}
+        // plugins={[plugin.current]}
+        // onMouseEnter={plugin.current.stop}
+        // onMouseLeave={plugin.current.reset}
       >
         <CarouselContent>
           {elements.map((data, index) => (
@@ -56,8 +56,8 @@ export default function Slideshow() {
                 <iframe
                   width="100%"
                   height="1000"
-                  src={`https://www.youtube.com/embed/${data.id}?autoplay=1&mute=1&controls=0&disablekb=1&loop=1&playsinline=0`}
-                  //src={`https://www.youtube.com/embed/${data.id}?&mute=1&controls=0&disablekb=1&loop=1&playsinline=0`}
+                  //src={`https://www.youtube.com/embed/${data.id}?autoplay=1&mute=1&controls=0&disablekb=1&loop=1&playsinline=0`}
+                  src={`https://www.youtube.com/embed/${data.id}?&mute=1&controls=0&disablekb=1&loop=1&playsinline=0`}
                   title={data.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"

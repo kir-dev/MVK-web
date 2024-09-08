@@ -15,5 +15,19 @@ export const raceType = defineType({
       name: "url",
       type: "url",
     },
+    {
+      title: "Földrajzi szélesség",
+      name: "lat",
+      type: "number",
+      description:
+        "Északi szélesség. Amennyiben délen helyezkedik el, negatív számot adj meg.",
+    },
+    {
+      title: "Földrajzi hosszúság",
+      name: "lng",
+      type: "number",
+      description:
+        "Keleti hosszúság. Amennyiben nyugaton helyezkedik el, negatív számot adj meg.",
+    },
   ],
 });

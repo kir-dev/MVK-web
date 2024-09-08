@@ -1,20 +1,18 @@
 import Link from "next/link";
-import Image from "next/image";
+import { CiMail } from "react-icons/ci";
+import { FaFacebook, FaMailBulk } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className=" text-black text-center p-4 border-t-2 flex flex-row justify-between items-center">
+    <footer className=" text-white text-center p-4 border-t-2 flex flex-row justify-between items-center bg-[#263238]">
       <p className="text-sm">&copy; 2024 MVK</p>
-      <div className="flex flex-col items-center gap-0.5">
+      <div className="flex flex-row items-center gap-2">
         <Link href="https://www.facebook.com/bmemvk" target="_blank">
-          <img
-            height="32"
-            width="32"
-            src="https://cdn.simpleicons.org/facebook"
-          />
+          <FaFacebook size={30} />
         </Link>
-        <p>Kapcsolat:</p>
-        <a href="mailto:mvk@bmeehk.hu">mvk@bmeehk.hu</a>
+        <a href="mailto:mvk@bmeehk.hu">
+          <CiMail size={30} />
+        </a>
       </div>
       <p>
         Made With Love By{" "}

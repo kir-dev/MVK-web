@@ -6,15 +6,6 @@ import { redirect } from "next/navigation";
 import Image from "next/image";
 import { urlForImage } from "@/lib/sanity.image";
 import LinkCard from "@/components/teams/LinkCard";
-import { Link } from "lucide-react";
-import RaceResultCard from "@/components/teams/RaceResultCard";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import RaceCarousel from "@/components/teams/RaceCarousel";
 
 export default async function TeamPage({

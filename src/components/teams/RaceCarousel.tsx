@@ -13,15 +13,16 @@ import Autoplay from "embla-carousel-autoplay";
 
 export default function RaceCarousel({ races }: { races: RaceResult[] }) {
   const plugin = React.useRef(
-    Autoplay({ delay: 100, stopOnInteraction: false })
+    Autoplay({ delay: 4000, stopOnInteraction: false })
   );
+  console.log("races", races);
   return (
     <div className="w-full flex justify-center my-8">
       <Carousel className="w-full max-w-md" plugins={[plugin.current]}>
         <CarouselContent>
           {races.map((race) => (
             <CarouselItem key={race._id}>
-              <RaceResultCard key={race._id} race={race} />
+              <RaceResultCard race={race} />
             </CarouselItem>
           ))}
         </CarouselContent>

@@ -1,6 +1,6 @@
 export default function Introduction() {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-fit py-6 px-6">
+    <div className="flex flex-col items-center justify-center w-full h-fit p-10">
       <p className="text-lg">
         A Műegyetemi Versenycsapatok Közössége azzal a céllal alakult, hogy a
         Budapesti Műszaki és Gazdaságtudományi Egyetemen működő versenyjármű

@@ -34,6 +34,8 @@ export interface Race {
   _id: string;
   title: string;
   url: string;
+  lat: number;
+  lng: number;
 }
 export interface RaceResult {
   _type: "raceResult";
@@ -43,4 +45,10 @@ export interface RaceResult {
   description: string;
   date: string;
   image: ImageAsset;
+}
+interface Location {
+  _type: "geopoint";
+  lat: number;
+  lng: number;
+  alt: number;
 }

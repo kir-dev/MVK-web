@@ -1,6 +1,6 @@
 import { RaceResult } from "@/lib/sanity.types";
 import { Card, CardContent, CardHeader } from "../ui/card";
-import { Calendar } from "lucide-react";
+import { CiCalendar } from "react-icons/ci";
 import Image from "next/image";
 import { urlForImage } from "@/lib/sanity.image";
 import { CarouselItem } from "../ui/carousel";
@@ -12,7 +12,7 @@ export default function RaceResultCard({ race }: { race: RaceResult }) {
         <div>
           <h1>{race.title}</h1>
           <div className="flex flex-row items-center gap-2">
-            <Calendar size={20} />
+            <CiCalendar size={20} />
             {race.date}
           </div>
         </div>

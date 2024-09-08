@@ -1,7 +1,7 @@
 import { LinkType } from "@/lib/sanity.types";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import Link from "next/link";
-import { Link as LinkIcon } from "lucide-react";
+import { CiLink } from "react-icons/ci";
 
 export default function LinkCard({ link }: { link: LinkType }) {
   return (
@@ -13,7 +13,7 @@ export default function LinkCard({ link }: { link: LinkType }) {
           className="flex flex-row gap-2 items-center"
           target="_blank"
         >
-          <LinkIcon size={15} />
+          <CiLink size={15} />
           {link.url}
         </Link>
       </CardContent>
