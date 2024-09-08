@@ -26,7 +26,7 @@ export default async function NewsPage({
   const article = await getNewsArticle(client, params.slug);
   if (!article) return notFound();
   return (
-    <div className="p-10 relative">
+    <div className="p-10 flex-1">
       <Card className="fixed top-24 right-8 transition-all">
         <Accordion collapsible type="single" orientation="horizontal">
           <AccordionItem value="item-1">
@@ -45,10 +45,12 @@ export default async function NewsPage({
         </Accordion>
       </Card>
       <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
-      <div className="flex flex-row gap-4">
-        <FaUser className="ml-0.5" />
-        <h1>{article.author}</h1>
-      </div>
+      {article.author && (
+        <div className="flex flex-row gap-4">
+          <FaUser className="ml-0.5" />
+          <h1>{article.author}</h1>
+        </div>
+      )}
       <div className="flex flex-row gap-4">
         <CiCalendar size={20} />
         {new Date(article._createdAt).toLocaleDateString("hu-HU", {
@@ -61,7 +63,7 @@ export default async function NewsPage({
       </div>
       <span className="flex items-center gap-2"></span>
       <span className="flex items-center gap-2"></span>
-      <PortableText value={article.content} components={newsSerializer} />;
+      <PortableText value={article.content} components={newsSerializer} />
     </div>
   );
 }
