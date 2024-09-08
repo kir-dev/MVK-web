@@ -19,3 +19,14 @@ export async function getFirstFewNews(
     limit,
   });
 }
+
+const newsArticleQuery = groq`*[_type == "news" && slug.current == $slug][0]`;
+export async function getNewsArticle(
+  client: SanityClient,
+  slug: string
+): Promise<News | undefined> {
+  console.log(slug);
+  return await client.fetch(newsArticleQuery, {
+    slug,
+  });
+}
