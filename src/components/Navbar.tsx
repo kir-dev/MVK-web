@@ -23,7 +23,6 @@ export default function Navbar() {
     async function fetchTeams() {
       try {
         const data = await getTeams(client);
-        console.log(data);
         if (data) {
           setTeams(data);
         }
@@ -76,7 +75,6 @@ export default function Navbar() {
                 className={navigationMenuTriggerStyle()}
                 onClick={() => {
                   const section = document.getElementById("races");
-                  console.log(section);
                   if (section) {
                     section.scrollIntoView({ behavior: "smooth" });
                   }

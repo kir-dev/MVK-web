@@ -7,9 +7,19 @@ export default defineType({
   fields: [
     {
       name: "title",
-      title: "Title",
+      title: "Cím",
       type: "string",
       validation: (rule) => rule.required(),
+    },
+    {
+      name: "author",
+      title: "Szerző",
+      type: "string",
+    },
+    {
+      name: "visible",
+      title: "Látható-e",
+      type: "boolean",
     },
     {
       name: "slug",

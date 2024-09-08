@@ -23,6 +23,10 @@ export interface News {
   thumbnail: ImageAsset;
   content: PortableTextBlock[];
   excerpt: string;
+  author: string;
+  visible: boolean;
+  _createdAt: Date;
+  _updatedAt: Date;
 }
 export interface LinkType {
   _key: string;

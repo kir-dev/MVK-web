@@ -27,7 +27,6 @@ export default function MapsSection({}) {
 
     fetchTeams();
   }, []);
-  console.log(selectedRace);
   return (
     <div id="races" className="w-full p-10 bg-gray-200 scroll-smooth">
       <div className="flex flex-row justify-center max-h-[480px] gap-4 ">

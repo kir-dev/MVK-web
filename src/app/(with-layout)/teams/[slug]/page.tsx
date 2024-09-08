@@ -2,7 +2,7 @@ import { getTeam } from "@/lib/queries/team.queries";
 import { getClient } from "@/lib/sanity.client";
 import { teamDescriptionSerializer } from "@/utils/serializers/team.description.serializer";
 import { PortableText } from "next-sanity";
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import { urlForImage } from "@/lib/sanity.image";
 import LinkCard from "@/components/teams/LinkCard";
@@ -15,7 +15,7 @@ export default async function TeamPage({
 }) {
   const client = getClient();
   const team = await getTeam(client, params.slug);
-  if (!team) return redirect("/404");
+  if (!team) return notFound();
   return (
     <main className="m-4 flex flex-col flex-1">
       <div className="flex flex-row items-center justify-center gap-4">
