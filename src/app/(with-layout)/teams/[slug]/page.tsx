@@ -18,7 +18,7 @@ export default async function TeamPage({
   if (!team) return notFound();
   return (
     <main className="flex flex-col flex-1">
-      <div className="p-4 px-40">
+      <div className="p-4 px-40 flex-1">
         <div className="flex flex-row items-center justify-center gap-4">
           <Image
             src={(team.logo ? urlForImage(team.logo)?.url() : "") ?? ""}
