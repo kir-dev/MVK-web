@@ -33,7 +33,7 @@ export default function Slideshow() {
     fetchVideos();
   }, []);
   return (
-    <div className="w-screen relative h-[56vh] overflow-hidden flex flex-row items-center">
+    <>
       <div className="w-screen h-full absolute z-20"></div>
 
       <Carousel className="w-screen z-10" plugins={[plugin.current]}>
@@ -60,6 +60,6 @@ export default function Slideshow() {
           ))}
         </CarouselContent>
       </Carousel>
-    </div>
+    </>
   );
 }

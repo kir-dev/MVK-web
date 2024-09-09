@@ -5,6 +5,7 @@ import blockContent from "../schemaTypes/blockContent";
 import { raceType } from "../schemaTypes/raceType";
 import { raceResultType } from "../schemaTypes/raceResultType";
 import { videoType } from "../schemaTypes/videoType";
+import { settingsType } from "../schemaTypes/settingsType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -14,5 +15,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     raceType,
     raceResultType,
     videoType,
+    settingsType,
   ],
 };

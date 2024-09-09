@@ -16,7 +16,6 @@ export default function MapsSection({}) {
     async function fetchTeams() {
       try {
         const data = await getRaces(client);
-        console.log(data);
         if (data) {
           setRaces(data);
         }

@@ -61,3 +61,10 @@ export interface SlideshowVideoData {
   title: string;
   videoId: string;
 }
+export interface Settings {
+  _type: "document";
+  _id: string;
+  _updatedAt: string;
+  _createdAt: string;
+  intro: string;
+}

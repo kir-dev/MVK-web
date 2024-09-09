@@ -1,22 +1,16 @@
-export default function Introduction() {
+import { getSettings } from "@/lib/queries/settings.queries";
+import { getClient } from "@/lib/sanity.client";
+import Slideshow from "./Slideshow";
+
+export default async function Introduction() {
+  const client = getClient();
+  const settings = await getSettings(client);
   return (
-    <div className="flex flex-col items-center justify-center w-full h-fit p-10">
-      <p className="text-lg">
-        A Műegyetemi Versenycsapatok Közössége azzal a céllal alakult, hogy a
-        Budapesti Műszaki és Gazdaságtudományi Egyetemen működő versenyjármű
-        építő hallgatói csapatok működését összehangoltan segítse, valamint a
-        tagok számára az egyetemi képzést kiegészítő, szakmai fejlődést
-        elősegítő lehetőségeket biztosítsa. Az MVK további célja az egyetem
-        népszerűsítése és képviselete hazai és nemzetközi eseményeken. Az MVK
-        csapatai földön, vízen és levegőben is versenyeznek olyan nemzetközi
-        hallgatói versenysorozatokban, mint a Solar Boat Challenge, a Formula
-        Student, a European Rocketry Challenge, az Aventics Pneumobil verseny
-        vagy a Shell Eco-Marathon, amelyek a világ legelismertebb konstruktőri
-        versenyei, ahol a világ minden tájáról érkező hallgatói csapatok
-        összemérhetik tudásukat. A közösség csapatai számos dobogós helyezéssel,
-        nemzetközi sikerrel rendelkeznek és büszkén állíthatjuk, hogy a világ
-        legjobbjai közé tartoznak.
-      </p>
+    <div className="w-screen relative h-[78vh] overflow-hidden">
+      <Slideshow />
+      <div className="h-fit p-10 absolute z-50 bg-white md:top-1/2 top-0 md:-translate-y-1/2 md:w-[40dvw] w-full">
+        <p className="text-lg h-fit">{settings?.intro}</p>
+      </div>
     </div>
   );
 }

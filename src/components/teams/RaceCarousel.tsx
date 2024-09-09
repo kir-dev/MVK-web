@@ -15,7 +15,6 @@ export default function RaceCarousel({ races }: { races: RaceResult[] }) {
   const plugin = React.useRef(
     Autoplay({ delay: 4000, stopOnInteraction: false })
   );
-  console.log("races", races);
   return (
     <div className="w-full flex justify-center my-8">
       <Carousel className="w-full max-w-md" plugins={[plugin.current]}>

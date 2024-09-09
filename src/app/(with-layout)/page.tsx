@@ -7,7 +7,6 @@ import TeamCardSection from "@/components/teams/TeamCardSection";
 export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-start overflow-x-hidden">
-      <Slideshow />
       <Introduction />
       <TeamCardSection />
       <NewsSection />

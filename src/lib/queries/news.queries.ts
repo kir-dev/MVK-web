@@ -25,7 +25,6 @@ export async function getNewsArticle(
   client: SanityClient,
   slug: string
 ): Promise<News | undefined> {
-  console.log(slug);
   return await client.fetch(newsArticleQuery, {
     slug,
   });

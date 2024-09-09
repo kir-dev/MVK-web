@@ -5,18 +5,16 @@ import { CiLink } from "react-icons/ci";
 
 export default function LinkCard({ link }: { link: LinkType }) {
   return (
-    <Card>
-      <CardHeader title={link.title}>{link.title}</CardHeader>
-      <CardContent>
-        <Link
-          href={link.url}
-          className="flex flex-row gap-2 items-center"
-          target="_blank"
-        >
-          <CiLink size={15} />
-          {link.url}
-        </Link>
-      </CardContent>
-    </Card>
+    <Link href={link.url} target="_blank">
+      <Card className="hover:bg-[#455a64] hover:text-white cursor-pointer">
+        <CardHeader title={link.title}>{link.title}</CardHeader>
+        <CardContent>
+          <div className="flex flex-row gap-2 items-center">
+            <CiLink size={15} />
+            {link.url}
+          </div>
+        </CardContent>
+      </Card>
+    </Link>
   );
 }
