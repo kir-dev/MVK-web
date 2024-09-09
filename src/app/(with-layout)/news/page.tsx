@@ -15,7 +15,7 @@ export default async function AllNewsPage() {
   return (
     <div className="flex-1 p-10">
       <h1 className="text-3xl font-bold mb-4">Hírek</h1>
-      <div className="flex flex-row flex-wrap">
+      <div className="flex flex-row flex-wrap gap-4">
         {news.map((data, index) => (
           <NewsCard key={index} news={data} />
         ))}

@@ -30,7 +30,7 @@ export default async function NewsPage({
       <Card className="fixed top-24 right-8 transition-all p-4">
         <Accordion collapsible type="single" orientation="horizontal">
           <AccordionItem value="item-1" className="border-0">
-            <AccordionTrigger className="text-end items-center flex flex-row justify-end p-4 gap-4">
+            <AccordionTrigger className="text-end items-center flex flex-row justify-end p-0 gap-4">
               Tartalom
             </AccordionTrigger>
             <AccordionContent>
