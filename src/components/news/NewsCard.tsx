@@ -11,9 +11,8 @@ export default function NewsCard({ news }: { news: News }) {
         <Image
           src={
             news.thumbnail
-              ? urlForImage(news.thumbnail)?.width(200).height(200).url() ??
-                "/images/card-example-2.jpeg"
-              : "/images/card-example-2.jpeg"
+              ? urlForImage(news.thumbnail)?.width(200).height(200).url() ?? ""
+              : ""
           }
           alt={news.title}
           className="object-cover"
@@ -21,10 +20,20 @@ export default function NewsCard({ news }: { news: News }) {
           height={200}
         />
         <div className="bg-transparent z-10 relative px-4 text-center text-ellipsis overflow-hidden h-full max-h-full">
-          <h1 className="text-md text-black font-bold mb-4">{news.title}</h1>
+          <h1 className="text-md text-black font-bold my-4">{news.title}</h1>
           {news.excerpt && (
             <p className="max-h-[60%] text-ellipsis">{news.excerpt}</p>
           )}
+          <div className="w-full text-start px-4 pb-4">
+            <p>{news.author}</p>
+            <p>
+              {new Date(news._createdAt).toLocaleDateString("hu-HU", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+              })}{" "}
+            </p>
+          </div>
         </div>
       </Card>
     </Link>

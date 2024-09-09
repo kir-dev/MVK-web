@@ -27,14 +27,14 @@ export default async function NewsPage({
   if (!article) return notFound();
   return (
     <div className="p-10 flex-1">
-      <Card className="fixed top-24 right-8 transition-all">
+      <Card className="fixed top-24 right-8 transition-all p-4">
         <Accordion collapsible type="single" orientation="horizontal">
-          <AccordionItem value="item-1">
+          <AccordionItem value="item-1" className="border-0">
             <AccordionTrigger className="text-end items-center flex flex-row justify-end p-4 gap-4">
               Tartalom
             </AccordionTrigger>
             <AccordionContent>
-              <ul className="list-disc list-inside ml-2">
+              <ul className="list-disc list-inside ml-2 gap-2">
                 <PortableText
                   value={article.content}
                   components={tocSerializer}

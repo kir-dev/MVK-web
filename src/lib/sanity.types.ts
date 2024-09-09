@@ -56,3 +56,8 @@ interface Location {
   lng: number;
   alt: number;
 }
+export interface SlideshowVideoData {
+  _type: "video";
+  title: string;
+  videoId: string;
+}

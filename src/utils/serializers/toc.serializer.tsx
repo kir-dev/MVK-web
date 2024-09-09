@@ -6,7 +6,7 @@ export const tocSerializer = {
     block: ({ value }) => {
       const { style, _key, children } = value;
       return /^h\d/.test(style ?? "normal") ? (
-        <li className="pl-4">
+        <li className="my-2">
           <Link href={`#h${_key}`}>
             {children.map((child: any) => child.text).join("")}
           </Link>

@@ -8,10 +8,7 @@ const InnerHeading: FC<PropsWithChildren<{ _key?: string }>> = ({
 }) => (
   <>
     <a className="invisible relative top-[-5rem] block" id={`h${_key}`} />
-    {children}{" "}
-    <a href={`#h${_key}`} aria-hidden="true" tabIndex={-1}>
-      🔗
-    </a>
+    {children} <a href={`#h${_key}`} aria-hidden="true" tabIndex={-1} />
   </>
 );
 

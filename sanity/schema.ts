@@ -4,7 +4,15 @@ import newsType from "../schemaTypes/newsType";
 import blockContent from "../schemaTypes/blockContent";
 import { raceType } from "../schemaTypes/raceType";
 import { raceResultType } from "../schemaTypes/raceResultType";
+import { videoType } from "../schemaTypes/videoType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [teamType, newsType, blockContent, raceType, raceResultType],
+  types: [
+    teamType,
+    newsType,
+    blockContent,
+    raceType,
+    raceResultType,
+    videoType,
+  ],
 };
