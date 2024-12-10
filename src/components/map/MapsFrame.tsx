@@ -54,7 +54,7 @@ export default function MapsFrame({
   ) => {
     mapRef.current?.panTo({ lat, lng });
     setSelectedRace(raceId);
-    // ref. https://developers.google.com/maps/documentation/javascript/reference?hl=it
+    // ref. https://developers.google.com/maps/documentation/javascript/reference
   };
   return (
     <div className="h-[50vh] flex-1">

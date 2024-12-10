@@ -45,10 +45,12 @@ export default function MapsSection({}) {
                 >
                   <CardHeader title={race.title}>{race.title}</CardHeader>
                   <CardContent>
-                    <Link href={race.url}>
-                      {race.url.slice(0, 40)}
-                      {race.url.length > 40 && "..."}
-                    </Link>
+                    {race.url && (
+                      <Link href={race.url}>
+                        {race.url.slice(0, 40)}
+                        {race.url.length > 40 && "..."}
+                      </Link>
+                    )}
                   </CardContent>
                 </Card>
               );
