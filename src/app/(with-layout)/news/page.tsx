@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import NewsCard from "@/components/news/NewsCard";
 import { getNews } from "@/lib/queries/news.queries";
 import { getClient } from "@/lib/sanity.client";

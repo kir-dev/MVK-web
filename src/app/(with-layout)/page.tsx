@@ -1,7 +1,7 @@
+export const dynamic = "force-dynamic";
 import Introduction from "@/components/Introduction";
 import MapsSection from "@/components/map/MapsSection";
 import NewsSection from "@/components/news/NewsSection";
-import Slideshow from "@/components/Slideshow";
 import TeamCardSection from "@/components/teams/TeamCardSection";
 
 export default async function Home() {

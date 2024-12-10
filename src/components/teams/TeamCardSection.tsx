@@ -1,4 +1,4 @@
-import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+export const dynamic = "force-dynamic";
 import { getClient } from "@/lib/sanity.client";
 import { getTeams } from "@/lib/queries/team.queries";
 import TeamCard from "./TeamCard";
