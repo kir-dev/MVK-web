@@ -58,6 +58,7 @@ export default function MapsSection({}) {
         <div className="grid grid-cols-2 gap-4 overflow-scroll pr-3">
           {teams &&
             teams.map((team, index) => {
+              const isLast = index === teams.length - 1;
               return (
                 <Card
                   key={team._id}
@@ -68,7 +69,7 @@ export default function MapsSection({}) {
                   }
                   color={team.color.hex}
                   style={{ backgroundColor: team.color.hex }}
-                  className={` text-white cursor-pointer w-32 h-32 text-center flex flex-col items-center justify-center px-4 ${index === selectedTeam ? "border-4 border-[#27aae1]" : ""}`}
+                  className={` text-white cursor-pointer w-32 h-32 text-center flex flex-col items-center justify-center px-4 ${index === selectedTeam ? "border-4 border-[#27aae1]" : ""}  ${isLast ? "col-span-2 justify-self-center" : ""}`}
                 >
                   {team.name}
                 </Card>
