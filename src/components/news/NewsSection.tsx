@@ -19,7 +19,9 @@ export default async function NewsSection() {
         ))}
       </div>
       <Link href="/news">
-        <Card className="absolute bottom-10 right-10 flex flex-row gap-3 border-2 p-2 items-center bg-transparent text-white">
+        <Card
+          className={`${news.length > 3 && "absolute bottom-10"} float-right w-fit right-10 flex flex-row gap-3 border-2 p-2 mt-8 items-center bg-transparent text-white`}
+        >
           <p>Összes hír</p>
           <FaAngleDoubleRight />
         </Card>

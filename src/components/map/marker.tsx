@@ -26,6 +26,7 @@ interface MarkerProps {
     props: { latLng: LatLngLiteral }
   ) => void;
   raceId: number;
+  color: string;
 }
 
 const Marker = ({
@@ -39,6 +40,8 @@ const Marker = ({
   onDrag,
   onDragEnd,
   onDragStart,
+  selected,
+  color,
   ...props
 }: MarkerProps) =>
   lat && lng ? (
@@ -49,10 +52,8 @@ const Marker = ({
       onClick={(e) =>
         onClick ? onClick(e, { raceId: raceId, lat, lng, markerId }) : null
       }
-      style={{ fontSize: 40 }}
-      width={35}
-      height={35}
-      color={props.selected ? "red" : "black"}
+      style={{ fontSize: selected ? 60 : 40 }}
+      color={color}
       {...props}
     />
   ) : null;

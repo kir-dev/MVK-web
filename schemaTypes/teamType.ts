@@ -23,6 +23,16 @@ export const teamType = defineType({
       description: "Ez lesz a csapat oldal URL-je.",
     },
     {
+      name: "color",
+      title: "Szín",
+      type: "color",
+      description:
+        "A térképen ilyen színnel fognak megjelenni a csapat versenyei",
+      options: {
+        disableAlpha: true,
+      },
+    },
+    {
       name: "logo",
       title: "Logo",
       type: "image",

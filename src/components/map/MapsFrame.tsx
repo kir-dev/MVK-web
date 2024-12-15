@@ -39,6 +39,7 @@ export default function MapsFrame({
     setMapReady(true);
   };
   useEffect(() => {
+    if (selectedRace === -1 || selectedRace >= races.length) return;
     if (mapRef.current !== null && mapReady) {
       /* eslint-disable-next-line no-alert */
       mapRef.current.panTo({
@@ -46,7 +47,7 @@ export default function MapsFrame({
         lng: races[selectedRace].lng,
       });
     }
-  }, [selectedRace]);
+  }, [selectedRace, races, mapReady]);
 
   const onMarkerClick = (
     e: React.MouseEvent<SVGElement, MouseEvent>,
@@ -56,6 +57,7 @@ export default function MapsFrame({
     setSelectedRace(raceId);
     // ref. https://developers.google.com/maps/documentation/javascript/reference
   };
+  console.log(races);
   return (
     <div className="h-[50vh] flex-1">
       <GoogleMap
@@ -76,6 +78,8 @@ export default function MapsFrame({
             onClick={onMarkerClick}
             draggable={false}
             selected={selectedRace === index}
+            color={race.team?.color?.hex || "#000"}
+            className="-translate-y-1/2"
           />
         ))}
       </GoogleMap>

@@ -14,6 +14,7 @@ export interface Team {
   logo: ImageAsset;
   Links: LinkType[];
   races: RaceResult[];
+  color: SanityColor;
 }
 export interface News {
   _type: "news";
@@ -40,6 +41,7 @@ export interface Race {
   url: string;
   lat: number;
   lng: number;
+  team: Team;
 }
 export interface RaceResult {
   _type: "raceResult";
@@ -68,3 +70,36 @@ export interface Settings {
   _createdAt: string;
   intro: string;
 }
+
+type HslaColor = {
+  _type: "hslaColor";
+  h: number; // Hue
+  s: number; // Saturation
+  l: number; // Lightness
+  a: number; // Alpha
+};
+
+type HsvaColor = {
+  _type: "hsvaColor";
+  h: number; // Hue
+  s: number; // Saturation
+  v: number; // Value
+  a: number; // Alpha
+};
+
+type RgbaColor = {
+  _type: "rgbaColor";
+  r: number; // Red
+  g: number; // Green
+  b: number; // Blue
+  a: number; // Alpha
+};
+
+export type SanityColor = {
+  _type: "color";
+  hex: string; // Hexadecimal color code
+  alpha: number; // Alpha value
+  hsl: HslaColor; // HSLA color representation
+  hsv: HsvaColor; // HSVA color representation
+  rgb: RgbaColor; // RGBA color representation
+};

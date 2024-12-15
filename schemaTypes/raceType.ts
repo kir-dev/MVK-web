@@ -16,6 +16,22 @@ export const raceType = defineType({
       type: "url",
     },
     {
+      title: "Kép",
+      name: "image",
+      type: "image",
+    },
+    {
+      title: "Leírás",
+      name: "description",
+      type: "text",
+    },
+    {
+      title: "Csapat",
+      name: "team",
+      type: "reference",
+      to: { type: "team" },
+    },
+    {
       title: "Földrajzi szélesség",
       name: "lat",
       type: "number",
