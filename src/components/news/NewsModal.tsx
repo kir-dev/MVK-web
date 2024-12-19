@@ -1,24 +1,13 @@
 import { newsSerializer } from "@/utils/serializers/news.serializer";
-import { tocSerializer } from "@/utils/serializers/toc.serializer";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@radix-ui/react-accordion";
 import { PortableText } from "next-sanity";
 import { CiCalendar } from "react-icons/ci";
 import { FaUser } from "react-icons/fa6";
-import { Card } from "../ui/card";
 import { News } from "@/lib/sanity.types";
 import {
-  Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 
 export const NewsModal = ({ article }: { article: News }) => {

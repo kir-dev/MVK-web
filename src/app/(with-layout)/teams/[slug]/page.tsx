@@ -17,7 +17,7 @@ export default async function TeamPage({
   const team = await getTeam(client, params.slug);
   if (!team) return notFound();
   return (
-    <main className="flex flex-col flex-1">
+    <div className="flex flex-col flex-1">
       <div className="p-4 px-40 flex-1">
         <div className="flex flex-row items-center justify-center gap-4">
           <Image
@@ -36,10 +36,10 @@ export default async function TeamPage({
         />
       </div>
       {team.races && <RaceCarousel races={team.races} />}
-      <div className="w-screen flex flex-row flex-wrap justify-center gap-4 p-4">
+      <div className="w-full flex flex-row flex-wrap justify-center gap-4 p-4">
         {team.Links &&
           team.Links.map((link) => <LinkCard key={link._key} link={link} />)}
       </div>
-    </main>
+    </div>
   );
 }

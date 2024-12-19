@@ -10,10 +10,12 @@ export default async function TeamCardSection() {
   return (
     <div className="w-screen h-fit p-10 bg-gray-200">
       <h1 className="text-3xl">Csapatok</h1>
-      <div className="flex flex-row items-center w-screen  gap-4 justify-center mt-8 overflow-x-scroll">
-        {teams.map((data, index) => (
-          <TeamCard key={index} team={data} />
-        ))}
+      <div className=" overflow-x-scroll">
+        <div className="flex flex-row items-center w-screen gap-4 justify-center no-scrollbar">
+          {teams.map((data, index) => (
+            <TeamCard key={index} team={data} />
+          ))}
+        </div>
       </div>
     </div>
   );

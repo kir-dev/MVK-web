@@ -55,7 +55,7 @@ export default function MapsSection({}) {
   return (
     <div id="races" className="w-full p-10 bg-gray-200 scroll-smooth">
       <div className="flex flex-row justify-center max-h-[480px] gap-4 ">
-        <div className="grid grid-cols-2 gap-4 overflow-scroll pr-3">
+        <div className="grid grid-cols-2 gap-4 pr-3">
           {teams &&
             teams.map((team, index) => {
               return (
@@ -80,7 +80,7 @@ export default function MapsSection({}) {
           selectedRace={selectedRace}
           setSelectedRace={setSelectedRace}
         />
-        <div className="flex flex-col gap-4 overflow-scroll pr-3 w-1/4 h-[50vh]">
+        <div className="flex flex-col gap-4 overflow-y-scroll overflow-x-hidden w-1/4 h-[50vh]">
           {filteredRaces &&
             filteredRaces.map((race, index) => {
               return (

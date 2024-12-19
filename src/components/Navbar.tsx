@@ -34,7 +34,7 @@ export default function Navbar() {
     fetchTeams();
   }, []);
   return (
-    <header className="sticky top-0 z-50 border bg-white px-6 py-3 text-black w-screen">
+    <header className="sticky top-0 z-50 border bg-white px-6 py-3 text-black w-full">
       <div className="flex flex-row items-center justify-between border-t-black">
         <div className="align flex items-center">
           <Link
