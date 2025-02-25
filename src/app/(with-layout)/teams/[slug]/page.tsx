@@ -7,6 +7,8 @@ import Image from "next/image";
 import { urlForImage } from "@/lib/sanity.image";
 import LinkCard from "@/components/teams/LinkCard";
 import RaceCarousel from "@/components/teams/RaceCarousel";
+import { useState } from "react";
+import Gallery from "@/components/teams/Gallery";
 
 export default async function TeamPage({
   params,
@@ -17,7 +19,8 @@ export default async function TeamPage({
   const team = await getTeam(client, params.slug);
   if (!team) return notFound();
   return (
-    <div className="flex flex-col flex-1">
+    <div className="flex flex-col flex-1 items-center relative">
+      <Gallery team={team}></Gallery>
       <div className="p-4 px-40 flex-1">
         <div className="flex flex-row items-center justify-center gap-4">
           <Image

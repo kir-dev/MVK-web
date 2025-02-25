@@ -23,6 +23,12 @@ export const teamType = defineType({
       description: "Ez lesz a csapat oldal URL-je.",
     },
     {
+      name: "images",
+      title: "Képek",
+      type: "array",
+      of: [{ type: "image" }],
+    },
+    {
       name: "color",
       title: "Szín",
       type: "color",

@@ -3,22 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { urlForImage } from "@/lib/sanity.image";
 import { Card } from "../ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { NewsModal } from "./NewsModal";
 
 export default function NewsCard({ news }: { news: News }) {
   return (
     <Dialog>
       <DialogTrigger>
-        <Card className="relative flex flex-row items-center justify-center bg-white max-w-xl h-[200px] overflow-hidden border-2">
+        <Card className="relative flex flex-row items-center justify-center bg-white max-w-xl lg:h-[200px] h-[300px] overflow-hidden border-2">
           <Image
             src={
               news.thumbnail
