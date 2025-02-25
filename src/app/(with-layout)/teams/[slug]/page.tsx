@@ -35,7 +35,13 @@ export default async function TeamPage({
           components={teamDescriptionSerializer}
         />
       </div>
+      <h2 className="text-2xl p-4 text-center font-bold text-[#455a64]">
+        Versenyek
+      </h2>
       {team.races && <RaceCarousel races={team.races} />}
+      <h2 className="text-2xl p-4 text-center font-bold text-[#455a64]">
+        Elérhetőségeink
+      </h2>
       <div className="w-screen flex flex-row flex-wrap justify-center gap-4 p-4">
         {team.Links &&
           team.Links.map((link) => <LinkCard key={link._key} link={link} />)}

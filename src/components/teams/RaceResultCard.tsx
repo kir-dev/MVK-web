@@ -7,7 +7,7 @@ import { CarouselItem } from "../ui/carousel";
 
 export default function RaceResultCard({ race }: { race: RaceResult }) {
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader className="grid grid-cols-2 grid-rows-1 h-1/3 items-end w-96 justify-end">
         <div>
           <h1>{race.title}</h1>
@@ -29,7 +29,9 @@ export default function RaceResultCard({ race }: { race: RaceResult }) {
         </div>
       </CardHeader>
       <CardContent className="flex flex-col items-center">
-        <p className="whitespace-pre-wrap mb-3">{race.description}</p>
+        <p className="whitespace-pre-wrap mb-3 max-h-32 overflow-y-auto">
+          {race.description}
+        </p>
         <Image
           src={
             race.image ? urlForImage(race.image)?.width(300).url() ?? "" : ""
