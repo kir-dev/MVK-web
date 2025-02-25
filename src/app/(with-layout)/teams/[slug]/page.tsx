@@ -31,7 +31,9 @@ export default async function TeamPage({
         </div>
         <div className="flex flex-row flex-wrap justify-center gap-4 p-4">
           {team.Links &&
-            team.Links.map((link) => <LinkCard key={link._key} link={link} />)}
+            team.Links.map((link) => (
+              <LinkCard key={link._key} link={link} color={team.color} />
+            ))}
         </div>
 
         <PortableText
