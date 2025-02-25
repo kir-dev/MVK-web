@@ -12,7 +12,7 @@ import NextJsImage from "../next-js-image";
 import { Button } from "../ui/button";
 export default function Gallery({ team }: { team: Team }) {
   const [openGallery, setOpenGallery] = useState(false);
-  console.log(team);
+  if (team.images.length === 0 || !team.images) return null;
   return (
     <>
       <button
