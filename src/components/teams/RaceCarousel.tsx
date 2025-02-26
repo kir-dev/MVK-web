@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/carousel";
 import RaceResultCard from "./RaceResultCard";
 import React from "react";
-import Autoplay from "embla-carousel-autoplay";
 
 export default function RaceCarousel({ races }: { races: RaceResult[] }) {
   return (
