@@ -9,18 +9,14 @@ import {
 } from "@/components/ui/carousel";
 import RaceResultCard from "./RaceResultCard";
 import React from "react";
-import Autoplay from "embla-carousel-autoplay";
 
 export default function RaceCarousel({ races }: { races: RaceResult[] }) {
-  const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: false })
-  );
   return (
     <div className="w-full flex justify-center my-8 max-h-40">
-      <Carousel className="w-full max-w-md" plugins={[plugin.current]}>
+      <Carousel className="w-full max-w-md">
         <CarouselContent>
           {races.map((race) => (
-            <CarouselItem key={race._id}>
+            <CarouselItem className="basis-1/3" key={race._id}>
               <RaceResultCard race={race} />
             </CarouselItem>
           ))}
