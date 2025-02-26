@@ -16,7 +16,7 @@ export default async function TeamCardSection() {
   if (!teams) return null;
   return (
     <div className="w-full h-fit p-10 bg-gray-200">
-      <h1 className="text-3xl mb-4">Csapatok</h1>
+      <h1 className="text-3xl mb-4 font-semibold">Csapatok</h1>
       <div className="flex flex-row flex-wrap items-center gap-4 justify-center">
         {teams.map((data, index) => (
           <TeamCard key={index} team={data} />

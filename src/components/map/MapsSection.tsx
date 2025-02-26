@@ -55,6 +55,7 @@ export default function MapsSection({}) {
   }, [selectedTeam, races, teams]);
   return (
     <div id="races" className="w-full p-10 bg-gray-200 scroll-smooth">
+      <h1 className="text-3xl mb-4 font-semibold">Versenyek</h1>
       <div className="flex lg:flex-row flex-col justify-center lg:max-h-[480px] max-h-max gap-4 ">
         <div className="grid lg:grid-cols-2 grid-cols-3 gap-4 pr-3 items-center justify-center place-items-center">
           {teams &&
