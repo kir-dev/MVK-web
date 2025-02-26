@@ -41,7 +41,12 @@ export default async function TeamPage({
           components={teamDescriptionSerializer}
         />
       </div>
-      {team.races && <RaceCarousel races={team.races} />}
+      {team.races && (
+        <div className="p-4 text-center">
+          <h2 className="text-2xl font-bold mb-4">Versenyek</h2>
+          <RaceCarousel races={team.races} />
+        </div>
+      )}
     </main>
   );
 }
