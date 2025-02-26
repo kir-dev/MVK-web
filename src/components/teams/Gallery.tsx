@@ -10,17 +10,26 @@ import { useState } from "react";
 import { Images } from "lucide-react";
 import NextJsImage from "../next-js-image";
 import { Button } from "../ui/button";
+import Image from "next/image";
 export default function Gallery({ team }: { team: Team }) {
   const [openGallery, setOpenGallery] = useState(false);
-  if (team.images.length === 0 || !team.images) return null;
+  if (!team.images || team.images.length === 0) return null;
   return (
     <>
       <button
-        className="flex flex-col cursor-pointer justify-center items-center gap-4 absolute top-4 z-40 right-4 h-36 aspect-square border rounded-md"
+        className="flex flex-col cursor-pointer justify-center items-center gap-4 float-end rounded-md relative mt-auto"
         onClick={() => setOpenGallery(true)}
       >
-        <h1 className="text-3xl">Galéria</h1>
-        <Images />
+        <Image
+          src={urlForImage(team.images[0])?.url() || ""}
+          alt="Gallery"
+          width={500}
+          height={500}
+          className="rounded-md"
+        />
+        <h3 className="absolute top-2 left-2 bold bg-[#263238] p-4 text-white rounded-md">
+          Galéria
+        </h3>
       </button>
       <Lightbox
         open={openGallery}

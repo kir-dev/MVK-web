@@ -16,7 +16,7 @@ export default function RaceCarousel({ races }: { races: RaceResult[] }) {
     Autoplay({ delay: 4000, stopOnInteraction: false })
   );
   return (
-    <div className="w-full flex justify-center my-8">
+    <div className="w-full flex justify-center my-8 max-h-40">
       <Carousel className="w-full max-w-md" plugins={[plugin.current]}>
         <CarouselContent>
           {races.map((race) => (

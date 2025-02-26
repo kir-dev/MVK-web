@@ -20,31 +20,48 @@ export default async function TeamPage({
   if (!team) return notFound();
   return (
     <main className="flex flex-col flex-1 items-center relative">
-      <Gallery team={team}></Gallery>
-      <div className="p-4 px-10 lg:px-40 flex-1">
-        <div className="flex flex-row items-center justify-center gap-4">
+      <div className="p-4 px-10 flex flex-row w-full  gap-10 h-full">
+        <div className="flex flex-col gap-4 items-center justify-center w-fit p-8 min-h-[50dvh]">
           <Image
             src={(team.logo ? urlForImage(team.logo)?.url() : "") ?? ""}
             alt={""}
             className="object-cover"
-            height={100}
-            width={100}
+            height={150}
+            width={150}
           />
-          <h1 className="text-3xl font-bold">{team.name}</h1>
+          <h1 className="text-5xl italic text-center w-fit">{team.name}</h1>
+          <div className="flex flex-row flex-wrap justify-center gap-4 py-4 w-full">
+            {team.Links &&
+              team.Links.map((link) => (
+                <LinkCard key={link._key} link={link} color={team.color} />
+              ))}
+          </div>
+          <Gallery team={team}></Gallery>
         </div>
-        <div className="flex flex-row flex-wrap justify-center gap-4 p-4">
-          {team.Links &&
-            team.Links.map((link) => (
-              <LinkCard key={link._key} link={link} color={team.color} />
-            ))}
+        <div className="flex flex-col w-2/3 justify-center">
+          <p className="py-4">
+            A BME Solar Boat Team 2014-ben alakult meg azzal a céllal, hogy
+            megtervezze és megépítse Magyarország első kizárólag napenergiával
+            működő, ember által vezetett, teljesen elektromos hajtással
+            rendelkező versenyhajóját.
+          </p>
+          <p className="py-4">
+            Számunkra nagyon fontos, hogy a hallgatók a környezettudatosság
+            valamint a megújuló energiák ismeretében közel kerülhessenek egy
+            valós mérnöki projekthez, ezáltal nem csak szakmai tapasztalatra
+            tesznek szert, de csapatban is megtanulnak dolgozni. Mindemellett
+            nemzetközi kapcsolatokra is szert téve rengeteg tapasztalattal
+            kerülnek ki az iskolapadból az iparba.
+          </p>
+          <p className="py-4">
+            Az évek során 150-nél is több hallgató fordult meg a csapatnál az
+            egyetem különböző karjairól, mint például a gépészmérnöki,
+            közlekedés és járműmérnöki, villamosmérnöki valamint
+            gazdaságtudományi karról.
+          </p>
+          {team.races && <RaceCarousel races={team.races} />}
         </div>
-
-        <PortableText
-          value={team.description}
-          components={teamDescriptionSerializer}
-        />
       </div>
-      {team.races && <RaceCarousel races={team.races} />}
     </main>
   );
 }
