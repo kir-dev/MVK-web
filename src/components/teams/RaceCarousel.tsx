@@ -12,7 +12,7 @@ import React from "react";
 
 export default function RaceCarousel({ races }: { races: RaceResult[] }) {
   return (
-    <div className="w-full flex justify-center my-8">
+    <div className="flex flex-row justify-center">
       <Carousel>
         <CarouselContent>
           {races.map((race) => (
