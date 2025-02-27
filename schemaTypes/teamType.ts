@@ -54,6 +54,12 @@ export const teamType = defineType({
       validation: (rule) => rule.required(),
     },
     {
+      name: "background",
+      title: "Háttér",
+      type: "image",
+      description: "Ez fog megjelenni a csapat oldalon háttérként, ha van",
+    },
+    {
       name: "description",
       title: "Leírás",
       type: "blockContent",

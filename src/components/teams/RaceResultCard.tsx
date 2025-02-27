@@ -17,7 +17,7 @@ export default function RaceResultCard({ race }: { race: RaceResult }) {
   return (
     <Dialog>
       <DialogTrigger>
-        <Card className="relative h-[400px] flex flex-col p-6 gap-2 justify-between">
+        <Card className="relative flex flex-col p-6 gap-2 justify-between">
           <InfoIcon className="absolute top-2 right-2 text-gray-600"></InfoIcon>
           <div className="grid grid-cols-3 grid-rows-1 items-end justify-end">
             <div className="col-span-2 text-start">
@@ -49,7 +49,7 @@ export default function RaceResultCard({ race }: { race: RaceResult }) {
                   : ""
               }
               alt={race.title}
-              className="object-cover h-[250px] w-[230px]"
+              className="object-cover  w-[230px] h-auto"
               height={300}
               width={200}
             />
