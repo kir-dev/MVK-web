@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Race, Team } from "@/lib/sanity.types";
 import { getTeam, getTeams } from "@/lib/queries/team.queries";
 import { set } from "sanity";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export default function MapsSection({}) {
   const [races, setRaces] = useState<Race[]>([]);
@@ -54,8 +55,9 @@ export default function MapsSection({}) {
   }, [selectedTeam, races, teams]);
   return (
     <div id="races" className="w-full p-10 bg-gray-200 scroll-smooth">
-      <div className="flex flex-row justify-center max-h-[480px] gap-4 ">
-        <div className="grid grid-cols-2 gap-4 overflow-scroll pr-3">
+      <h1 className="text-3xl mb-4 font-semibold">Versenyek</h1>
+      <div className="flex lg:flex-row flex-col justify-center lg:max-h-[480px] max-h-max gap-4 ">
+        <div className="grid lg:grid-cols-2 grid-cols-3 gap-4 pr-3 items-center justify-center place-items-center">
           {teams &&
             teams.map((team, index) => {
               const isLast = index === teams.length - 1;
@@ -81,21 +83,27 @@ export default function MapsSection({}) {
           selectedRace={selectedRace}
           setSelectedRace={setSelectedRace}
         />
-        <div className="flex flex-col gap-4 overflow-scroll pr-3 w-1/4 h-[50vh]">
+        <div className="lg:flex lg:flex-col gap-4 overflow-y-scroll overflow-x-hidden lg:w-1/4 w-full grid grid-cols-2 h-[50vh]">
           {filteredRaces &&
             filteredRaces.map((race, index) => {
               return (
                 <Card
                   key={race._id}
                   onClick={() => setSelectedRace(index)}
-                  className={`cursor-pointer ${index === selectedRace ? "bg-[#455a64] text-white" : ""}`}
+                  style={
+                    index === selectedRace
+                      ? { backgroundColor: race.team.color.hex, color: "white" }
+                      : {}
+                  }
+                  className={`cursor-pointer`}
                 >
-                  <CardHeader title={race.title}>{race.title}</CardHeader>
-                  <CardContent>
+                  <CardContent className="flex flex-row gap-2 items-center pt-6 justify-between">
+                    <h1>{race.title}</h1>
                     {race.url && (
                       <Link href={race.url}>
-                        {race.url.slice(0, 40)}
-                        {race.url.length > 40 && "..."}
+                        <SquareArrowOutUpRight />
+                        {/* {race.url.slice(0, 40)}
+                        {race.url.length > 40 && "..."} */}
                       </Link>
                     )}
                   </CardContent>

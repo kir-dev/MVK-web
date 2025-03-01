@@ -36,7 +36,7 @@ export default function Slideshow() {
     <>
       <div className="w-screen h-full absolute z-20"></div>
 
-      <Carousel className="w-screen z-10" plugins={[plugin.current]}>
+      <Carousel className="w-screen z-10 -top-[10%]" plugins={[plugin.current]}>
         <CarouselContent>
           {elements.map((data, index) => (
             <CarouselItem

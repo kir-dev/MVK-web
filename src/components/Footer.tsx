@@ -4,7 +4,7 @@ import { FaFacebook, FaMailBulk } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className=" text-white text-center p-4 border-t-2 flex flex-row justify-between items-center bg-[#263238]">
+    <div className=" text-white text-center p-4 border-t-2 flex flex-row justify-between items-center bg-[#263238]">
       <p className="text-sm">&copy; 2024 MVK</p>
       <div className="flex flex-row items-center gap-2">
         <Link href="https://www.facebook.com/bmemvk" target="_blank">
@@ -20,6 +20,6 @@ export default function Footer() {
           Kir-Dev
         </a>
       </p>
-    </footer>
+    </div>
   );
 }
