@@ -25,7 +25,7 @@ export default function Gallery({ team }: { team: Team }) {
           alt="Gallery"
           width={500}
           height={500}
-          className="rounded-md"
+          className="rounded-md w-full h-full"
         />
         <h3 className="absolute top-2 left-2 bold bg-[#263238] p-4 text-white rounded-md">
           Galéria

@@ -16,7 +16,7 @@ import { InfoIcon } from "lucide-react";
 export default function RaceResultCard({ race }: { race: RaceResult }) {
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger className=" w-full">
         <Card className="relative flex flex-col p-6 gap-2 justify-between">
           <InfoIcon className="absolute top-2 right-2 text-gray-600"></InfoIcon>
           <div className="grid grid-cols-3 grid-rows-1 items-end justify-end">

@@ -23,22 +23,24 @@ export default async function TeamPage({
       className="flex flex-col flex-1 items-center relative bg-cover"
       style={
         team.background && {
-          background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${urlForImage(team.images[0])?.url()})`,
+          background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${urlForImage(team.background)?.url()})`,
           backgroundSize: "cover",
           color: "white",
         }
       }
     >
-      <div className="p-4 px-10 flex flex-row w-full  gap-10 h-full">
+      <div className="p-4 px-10 flex flex-col lg:flex-row w-full items-center gap-10 h-full">
         <div className="flex flex-col w-fit p-8 min-h-[50dvh]">
-          <div className=" flex-1 flex flex-col items-center justify-center  gap-4">
-            <Image
-              src={(team.logo ? urlForImage(team.logo)?.url() : "") ?? ""}
-              alt={""}
-              className="object-cover"
-              height={150}
-              width={150}
-            />
+          <div className=" flex-1 flex flex-col items-center justify-center gap-4">
+            <div className=" p-2 bg-white rounded-md">
+              <Image
+                src={(team.logo ? urlForImage(team.logo)?.url() : "") ?? ""}
+                alt={""}
+                className="object-cover"
+                height={150}
+                width={150}
+              />
+            </div>
             <h1 className="text-5xl italic text-center w-fit">{team.name}</h1>
             <div className="flex flex-row flex-wrap justify-center gap-4 py-4 w-full">
               {team.Links &&
@@ -49,8 +51,8 @@ export default async function TeamPage({
           </div>
           <Gallery team={team}></Gallery>
         </div>
-        <div className="flex flex-col w-2/3 justify-center">
-          <div className="max-h-[40dvh] overflow-y-scroll">
+        <div className="flex flex-col lg:w-2/3 justify-center">
+          <div className="overflow-y-scroll">
             <PortableText
               value={team.description}
               components={teamDescriptionSerializer}
