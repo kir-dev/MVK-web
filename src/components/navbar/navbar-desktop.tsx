@@ -11,12 +11,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { getTeams } from "@/lib/queries/team.queries";
-import { getClient } from "@/lib/sanity.client";
-import { useEffect, useState } from "react";
 import { Team } from "@/lib/sanity.types";
-import { ImageAsset } from "sanity";
-import { urlForImage } from "@/lib/sanity.image";
 import { NavbarItems } from "./navbar-items";
 
 export default function NavbarDesktop({ teams }: { teams?: Team[] }) {
@@ -58,12 +53,7 @@ export default function NavbarDesktop({ teams }: { teams?: Team[] }) {
               <NavigationMenuItem>
                 <NavigationMenuLink
                   className={navigationMenuTriggerStyle()}
-                  onClick={() => {
-                    const section = document.getElementById("races");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
+                  href="/#races"
                 >
                   Versenyek
                 </NavigationMenuLink>

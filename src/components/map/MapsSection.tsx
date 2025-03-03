@@ -43,7 +43,6 @@ export default function MapsSection({}) {
     fetchRaces();
   }, []);
   useEffect(() => {
-    console.log(selectedTeam);
     setSelectedRace(-1);
     if (selectedTeam === -1) {
       setFilteredRaces(races);

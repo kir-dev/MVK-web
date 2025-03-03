@@ -52,7 +52,7 @@ export default async function TeamPage({
           <Gallery team={team}></Gallery>
         </div>
         <div className="flex flex-col lg:w-2/3 justify-center">
-          <div className="overflow-y-scroll">
+          <div>
             <PortableText
               value={team.description}
               components={teamDescriptionSerializer}

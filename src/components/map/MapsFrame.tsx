@@ -50,7 +50,6 @@ export default function MapsFrame({
     setSelectedRace(raceId);
     // ref. https://developers.google.com/maps/documentation/javascript/reference
   };
-  console.log(races);
   return (
     <div className="h-[50vh] flex-1">
       <GoogleMap

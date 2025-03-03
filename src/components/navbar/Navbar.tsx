@@ -7,7 +7,6 @@ export default async function Navbar() {
   const client = getClient();
   let teams = await getTeams(client);
   if (!teams) return null;
-  console.log(teams);
   return (
     <>
       <NavbarDesktop teams={teams} />
