@@ -1,4 +1,6 @@
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 import { getTeam } from "@/lib/queries/team.queries";
 import { getClient } from "@/lib/sanity.client";
 import { teamDescriptionSerializer } from "@/utils/serializers/team.description.serializer";
