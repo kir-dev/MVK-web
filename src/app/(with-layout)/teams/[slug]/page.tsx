@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { getTeam } from "@/lib/queries/team.queries";
 import { getClient } from "@/lib/sanity.client";
 import { teamDescriptionSerializer } from "@/utils/serializers/team.description.serializer";
@@ -7,7 +8,6 @@ import Image from "next/image";
 import { urlForImage } from "@/lib/sanity.image";
 import LinkCard from "@/components/teams/LinkCard";
 import RaceCarousel from "@/components/teams/RaceCarousel";
-import { useState } from "react";
 import Gallery from "@/components/teams/Gallery";
 
 export default async function TeamPage({
