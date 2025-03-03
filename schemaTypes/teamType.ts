@@ -23,6 +23,12 @@ export const teamType = defineType({
       description: "Ez lesz a csapat oldal URL-je.",
     },
     {
+      name: "images",
+      title: "Képek",
+      type: "array",
+      of: [{ type: "image" }],
+    },
+    {
       name: "color",
       title: "Szín",
       type: "color",
@@ -46,6 +52,12 @@ export const teamType = defineType({
       description:
         "Ez fog megjelenni a főoldalon, a megfelelő megjelenítés érdekében a 9:16-os képarány ajánlott.",
       validation: (rule) => rule.required(),
+    },
+    {
+      name: "background",
+      title: "Háttér",
+      type: "image",
+      description: "Ez fog megjelenni a csapat oldalon háttérként, ha van",
     },
     {
       name: "description",

@@ -12,17 +12,26 @@ import React from "react";
 
 export default function RaceCarousel({ races }: { races: RaceResult[] }) {
   return (
-    <div className="flex flex-row justify-center">
-      <Carousel>
-        <CarouselContent>
+    <div className="w-full flex justify-center my-16 h-fit">
+      <Carousel
+        orientation="vertical"
+        opts={{
+          align: "start",
+        }}
+      >
+        <CarouselContent className="h-[65dvh]">
           {races.map((race) => (
-            <CarouselItem className="basis-1/3" key={race._id}>
+            <CarouselItem key={race._id} className="basis-1/2">
               <RaceResultCard race={race} />
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {races.length > 2 && (
+          <>
+            <CarouselPrevious className="text-black" />
+            <CarouselNext className="text-black" />
+          </>
+        )}
       </Carousel>
     </div>
   );

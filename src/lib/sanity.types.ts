@@ -11,9 +11,11 @@ export interface Team {
   slug: Slug;
   thumbnail: ImageAsset;
   description: PortableTextBlock[];
+  background: ImageAsset;
   logo: ImageAsset;
   Links: LinkType[];
   races: RaceResult[];
+  images: ImageAsset[];
   color: SanityColor;
 }
 export interface News {

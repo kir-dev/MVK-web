@@ -23,7 +23,7 @@ export default function LinkCard({
         <TooltipTrigger>
           <Link href={link.url} target="_blank">
             <Card
-              className="cursor-pointer flex items-center justify-center p-4 text-white"
+              className="cursor-pointer flex items-center justify-center p-4 text-white border border-white"
               style={{ backgroundColor: color.hex }}
             >
               {getLinkIcon(link.url)}
